@@ -1,5 +1,8 @@
 package com.sherlock.normal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。
  * <p>
@@ -33,22 +36,51 @@ public class T6 {
         Solution so = new Solution();
         System.out.println(so.convert("LEETCODEISHIRING", 3));
         System.out.println(so.convert("LEETCODEISHIRING", 4));
+        System.out.println(so.convert("PAYPALISHIRING", 3));
     }
 
     public static class Solution {
         public String convert(String s, int numRows) {
             if (numRows <= 1)
                 return s;
-            StringBuffer result = new StringBuffer();
             char[] chars = s.toCharArray();
-            int numLine = chars.length / (numRows + numRows - 2) * (1 + numRows - 2) + chars.length % (numRows + numRows - 2);
-            for (int j = 0; j < numLine; j++) {
-                for (int i = 0; i < numRows; i++) {
+            List<StringBuilder> list = new ArrayList<>();
+            for (int i = 0; i < numRows; i++) {
+                StringBuilder sb = new StringBuilder();
+                list.add(sb);
+            }
+            int l = 0;
+            for (int c = 0; l < chars.length; c++) {
 
+                for (int r = 0; r < numRows; r++) {
+                    if (l >= chars.length)
+                        break;
+                    int n = c % (numRows - 1);
+                    if (n == 0) {
+//                        System.out.print(chars[l]);
+
+                        list.get(r).append(chars[l++]);
+                    } else {
+                        if (r == numRows - n -1) {
+//                            System.out.print(chars[l]);
+
+                            list.get(r).append(chars[l++]);
+
+                        }else {
+//                            System.out.print(' ');
+
+                        }
+                    }
                 }
+//                System.out.print('\n');
+
             }
 
-            return result.toString();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < numRows; i++) {
+                sb.append(list.get(i));
+            }
+            return sb.toString();
         }
     }
 }
