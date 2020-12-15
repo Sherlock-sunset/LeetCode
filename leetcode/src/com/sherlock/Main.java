@@ -6,10 +6,7 @@ import com.sherlock.dynamic_programming.T837;
 import com.sherlock.easy.T28;
 import com.sherlock.hard.T10;
 import com.sherlock.hard.T4;
-import com.sherlock.normal.T11;
-import com.sherlock.normal.T15;
-import com.sherlock.normal.T17;
-import com.sherlock.normal.T8;
+import com.sherlock.normal.*;
 
 import java.util.List;
 
@@ -32,15 +29,22 @@ public class Main {
 //        System.out.println(new T8().myAtoi("-91283472332"));
 //        System.out.println(new T8().myAtoi("3.14159"));
 //        System.out.println(new T10().isMatch("aab","c*a*b"));
-//        int [] nums1 = {-1,0,1,2,-1,-4};
+//        int [] nums1 = {4,5,2,6,3,1};
+//        int [] nums1 = {10,1,2,7,6,1,5};
+        int [] nums1 = {1,1,2};
+//        int target = 8;
 //        int [] nums1 = {-1,0,1,2,-1,-4,-2,-3,3,0,4};
 //        List<List<Integer>> result = new T15().threeSum(nums1);
 //        for (int i = 0; i < result.size(); i++) {
 //            System.out.println(result.get(i));
 //        }
 //            System.out.println(new T17().letterCombinations("3"));
-            System.out.println(new T28().strStr("hello","ll"));
-
+//            System.out.println(new T28().strStr("hello","ll"));
+//        new T31().nextPermutation(nums1);
+//        System.out.println(new T33().search(nums1,0));
+//        System.out.println(new T38().countAndSay(4));
+//        System.out.println(new T40().combinationSum(nums1,target));
+        System.out.println(new T47().permuteUnique(nums1));
 
     }
 
