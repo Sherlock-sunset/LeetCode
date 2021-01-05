@@ -3,6 +3,7 @@ package com.sherlock;
 import com.sherlock.dynamic_programming.S14_2;
 import com.sherlock.dynamic_programming.T1641;
 import com.sherlock.dynamic_programming.T837;
+import com.sherlock.easy.T125;
 import com.sherlock.easy.T28;
 import com.sherlock.hard.T10;
 import com.sherlock.hard.T4;
@@ -13,7 +14,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 //        System.out.println(new T837().new21Game(10,1,10));
 //        System.out.println(new T837().new21Game(6,1,10));
 //        System.out.println(new T837().new21Game(21,17,10));
@@ -31,7 +32,7 @@ public class Main {
 //        System.out.println(new T10().isMatch("aab","c*a*b"));
 //        int [] nums1 = {4,5,2,6,3,1};
 //        int [] nums1 = {10,1,2,7,6,1,5};
-        int [] nums1 = {1,1,2};
+//        int [] nums1 = {1,1,2};
 //        int target = 8;
 //        int [] nums1 = {-1,0,1,2,-1,-4,-2,-3,3,0,4};
 //        List<List<Integer>> result = new T15().threeSum(nums1);
@@ -44,8 +45,16 @@ public class Main {
 //        System.out.println(new T33().search(nums1,0));
 //        System.out.println(new T38().countAndSay(4));
 //        System.out.println(new T40().combinationSum(nums1,target));
-        System.out.println(new T47().permuteUnique(nums1));
-
+//        System.out.println(new T47().permuteUnique(nums1));
+//        char a = 'a';
+//        char b = 'b';
+//        System.out.println((int) a);
+//        System.out.println((int) b);
+//        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+//        System.out.println(new T49().groupAnagrams(strs));
+//        System.out.println(new T125().isPalindrome("0P"));
+//        System.out.println(new T71().simplifyPath("/home//foo/"));
+        System.out.println(new T71().simplifyPath("/../"));
     }
 
 
