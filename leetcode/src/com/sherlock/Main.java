@@ -55,6 +55,7 @@ public class Main {
 //        System.out.println(new T125().isPalindrome("0P"));
 //        System.out.println(new T71().simplifyPath("/home//foo/"));
         System.out.println(new T71().simplifyPath("/../"));
+        System.out.println(new J20().isNumber("-1E-16"));
     }
 
 

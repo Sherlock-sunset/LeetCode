@@ -43,4 +43,7 @@ public class IntStack {
     public boolean isEmpty() {
         return top < 0;
     }
+    public void clear() {
+        top=-1;
+    }
 }
