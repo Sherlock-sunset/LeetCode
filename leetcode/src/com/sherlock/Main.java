@@ -9,7 +9,11 @@ import com.sherlock.easy.T28;
 import com.sherlock.hard.T10;
 import com.sherlock.hard.T4;
 import com.sherlock.normal.*;
+import com.sherlock.sort.BublleSort;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
@@ -31,7 +35,7 @@ public class Main {
 //        System.out.println(new T8().myAtoi("-91283472332"));
 //        System.out.println(new T8().myAtoi("3.14159"));
 //        System.out.println(new T10().isMatch("aab","c*a*b"));
-        int [] nums1 = {1, 1, 1, 2, 2, 3};
+        int [] nums1 = {5, 2, 3, 1, 4};
 //        int [] nums1 = {0,0,0,0,0};
 //        int [] nums1 = {10,1,2,7,6,1,5};
 //        int [] nums1 = {1,1,2};
@@ -66,7 +70,12 @@ public class Main {
 //            System.out.println(new T18().fourSum(nums1,0));
 //            System.out.println(new T91().numDecodings("1201234"));
 //            System.out.println(new T131().partition("bb"));
-        System.out.println(new T80().removeDuplicates(nums1));
+//        System.out.println(new T80().removeDuplicates(nums1));
+        new BublleSort().MySort(nums1);
+        for (int i = 0; i < nums1.length; i++) {
+            System.out.println(nums1[i]);
+        }
+        HashMap<Integer,Integer> opResults = new HashMap(); // 缓存值
     }
 
 

@@ -24,7 +24,27 @@ public class BublleSort {
         }
         return nums;
     }
+    public int[] MySort (int[] arr) {
+        // write code here
+        if(arr.length<=1) return arr;
+        quickSort(arr,0,arr.length-1);
+        return arr;
+    }
+    public void quickSort(int[] arr,int low,int high){
+        if(high<=low+1) return;
+        int pivot = arr[low], ol = low,oh = high;
+        while(low < high){
+            while(arr[high]>pivot && high>low) high--;
+            if(high>low)arr[low++] = arr[high];
 
+            while(arr[low]<pivot && high>low) low++;
+            if(high>low) arr[high--] = arr[low];
+        }
+        arr[low] = pivot;
+        pivot = low;
+        quickSort(arr,ol,pivot-1);
+        quickSort(arr,pivot+1,oh);
+    }
 //    public ArrayList<Integer> bubbleSort(ArrayList<Integer> nums) {
 //        if (nums ==null)
 //            return nums;
