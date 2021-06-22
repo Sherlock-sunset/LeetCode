@@ -1,14 +1,14 @@
 package com.sherlock.normal;
 
-import com.sherlock.sort.BublleSort;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class T47 {
     //因为不能重复，所以每一位数字选择对时候，不能选同一个
     public List<List<Integer>> permuteUnique(int[] nums) {
-        nums = new BublleSort().bubbleSort(nums); //先排序
+        Arrays.sort(nums); //先排序
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             //因为排序过，所以只要不和上一层相同就行

@@ -14,26 +14,26 @@ public class J32 {
     }
 
     public int[] levelOrder(TreeNode root) {
-        if (root ==null) return new int[0];
-        ArrayList<Integer> list = new ArrayList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        breadthSearch(list,queue);
-        int[] result = new int[list.size()];
-        for (int i = 0; i < list.size(); i++) {
-            result[i] = list.get(i);
+        if (root == null) return new int[0];
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        ArrayList<Integer> result = new ArrayList<>();
+        while (!q.isEmpty()) {
+            TreeNode node = q.remove();
+            result.add(node.val);
+            if (node.left != null)
+                q.add(node.left);
+            if (node.right != null)
+                q.add(node.right);
         }
-        return result;
+        int[] arr = new int[result.size()];
+        for (int i = 0; i < result.size(); i++) {
+            arr[i] = result.get(i);
+        }
+        return arr;
     }
 
-    public void breadthSearch( ArrayList<Integer> list, Queue<TreeNode> queue) {
-        while (!queue.isEmpty()){
-            TreeNode node = queue.poll();
-            list.add(node.val);
-            if (node.left!=null)
-                queue.offer(node.left);
-            if (node.right!=null)
-                queue.offer(node.right);
-        }
-    }
+
+
+
 }

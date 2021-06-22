@@ -9,7 +9,7 @@ public class Sclearn {
         while (sc.hasNextInt()){
             System.out.println(sc.nextInt());
             List<Integer> list = new ArrayList<>();
-            Collections
+            //Collections
         }
         sc.close();
     }

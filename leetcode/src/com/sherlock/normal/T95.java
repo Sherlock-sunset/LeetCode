@@ -1,6 +1,7 @@
 package com.sherlock.normal;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class T95 {
@@ -24,47 +25,41 @@ public class T95 {
     }
 
     public List<TreeNode> generateTrees(int n) {
-        List<TreeNode> result = new ArrayList<>();
-        List<TreeNode> nodes = new ArrayList<>();
-
-        for (int i = 1; i <= n; i++) {
-            TreeNode root = new TreeNode(i);
-            nodes.add(root);
+        if (n == 0) {
+            return new LinkedList<>();
         }
-        for (int i = 1; i <= n; i++) {
-            generateTree(nodes.get(i - 1), nodes.get(i - 1), n, 1, result, nodes);
-        }
-        return result;
+        return generateTrees(1, n);
     }
 
-    private void generateTree(TreeNode root, TreeNode parent, int n, int num, List<TreeNode> result, List<TreeNode> nodes) {
-        //left
-        for (int i = 0; i < parent.val; i++) {
-            parent.left = nodes.get(i);
-            if (num + 1 == n) {
-                generateTree(result, root, nodes);
-            } else generateTree(root, parent.left, n, num + 1, result, nodes);
+    public List<TreeNode> generateTrees(int start, int end) {
+        List<TreeNode> allTrees = new LinkedList<TreeNode>();
+        if (start > end) {
+            allTrees.add(null);
+            return allTrees;
         }
-        //right
-        for (int i = parent.val; i < n; i++) {
-            parent.right = nodes.get(i);
-            if (num + 1 == n) {
-                generateTree(result, root, nodes);
-            } else generateTree(root, parent.right, n, num + 1, result, nodes);
+
+        // 枚举可行根节点
+        for (int i = start; i <= end; i++) {
+            // 获得所有可行的左子树集合
+            List<TreeNode> leftTrees = generateTrees(start, i - 1);
+
+            // 获得所有可行的右子树集合
+            List<TreeNode> rightTrees = generateTrees(i + 1, end);
+
+            // 从左子树集合中选出一棵左子树，从右子树集合中选出一棵右子树，拼接到根节点上
+            for (TreeNode left : leftTrees) {
+                for (TreeNode right : rightTrees) {
+                    TreeNode currTree = new TreeNode(i);
+                    currTree.left = left;
+                    currTree.right = right;
+                    allTrees.add(currTree);
+                }
+            }
         }
+        return allTrees;
     }
 
-    private void generateTree(List<TreeNode> result, TreeNode root, List<TreeNode> nodes) {
-        List<TreeNode> buff = new ArrayList<>();
-        for (int i = 0; i < nodes.size(); i++) {
-            TreeNode node = nodes.get(i);
-            buff.add(new TreeNode(node.val));
-        }
-        for (int i = 0; i < nodes.size(); i++) {
-            TreeNode node = nodes.get(i);
-            buff.get(i).left = node.left == null ? null : buff.get(node.left.val - 1);
-            buff.get(i).right = node.right == null ? null : buff.get(node.right.val - 1);
-        }
-        result.add(buff.get(root.val - 1));
-    }
+
+
+
 }

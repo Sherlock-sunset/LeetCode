@@ -6,22 +6,16 @@ import java.util.LinkedList;
 public class J31 {
     public boolean validateStackSequences(int[] pushed, int[] popped) {
         Deque<Integer> stack = new LinkedList<>();
-        for (int i = 0, j = 0; i < popped.length; i++) {
-            if (!stack.isEmpty() && stack.peek() == popped[i]) {
+        int i = 0, j = 0;
+        while (j < popped.length) {
+            if (!stack.isEmpty() && stack.peek() == popped[j]) {
+                j++;
                 stack.pop();
             } else {
-                if (j==pushed.length) return false;
-                for (; j < pushed.length; j++) {
-                    if (pushed[j] == popped[i]) {
-                        j++;
-                        break;
-                    } else {
-                        if (j == pushed.length - 1) return false;
-                        else stack.push(pushed[j]);
-                    }
-                }
+                if (i >= pushed.length) return false;
+                stack.push(pushed[i++]);
             }
         }
-        return true;
+        return j >= popped.length;
     }
 }

@@ -1,4 +1,4 @@
-package c\\om.sherlock.normal;
+package com.sherlock.normal;
 
 import java.util.Deque;
 import java.util.LinkedList;

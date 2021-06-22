@@ -11,7 +11,7 @@ public class J5 {
                 sb.append("%20");
             }
         }
-
+        s.replace("","%20");
         return sb.toString();
     }
 }

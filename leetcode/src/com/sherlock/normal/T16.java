@@ -1,10 +1,11 @@
 package com.sherlock.normal;
 
-import com.sherlock.sort.BublleSort;
+
+import java.util.Arrays;
 
 public class T16 {
     public int threeSumClosest(int[] nums, int target) {
-        nums = new BublleSort().bubbleSort(nums);
+        Arrays.sort(nums);
         int result = 0, minDis = Integer.MAX_VALUE;
         int l = 0, r = nums.length - 1;
         while (l + 1 != r) {

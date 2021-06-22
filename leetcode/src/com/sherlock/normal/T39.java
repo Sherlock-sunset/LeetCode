@@ -1,14 +1,14 @@
 package com.sherlock.normal;
 
-import com.sherlock.sort.BublleSort;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class T39 {
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        new BublleSort().bubbleSort(candidates);
+        Arrays.sort(candidates);
 
         List<List<Integer>> result = new ArrayList<>();
 

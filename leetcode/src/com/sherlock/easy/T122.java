@@ -9,7 +9,7 @@ public class T122 {
         for (int i = 0; i < prices.length; i++) {
             if (lastPrice == - 1){
                 if (i + 1 < prices.length && prices[i + 1] > prices[i]) {
-                    lastPrice = prices[i];
+                    lastPrice = prices[i];//
                 }
             } else if (i + 1 < prices.length) {
                 if (prices[i] > lastPrice && prices[i + 1] < prices[i]) {

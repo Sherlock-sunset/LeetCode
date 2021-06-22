@@ -1,81 +1,41 @@
 package com.sherlock;
 
-import com.sherlock.dynamic_programming.S14_2;
-import com.sherlock.dynamic_programming.T1641;
-import com.sherlock.dynamic_programming.T837;
-import com.sherlock.easy.J62;
-import com.sherlock.easy.T125;
-import com.sherlock.easy.T28;
-import com.sherlock.hard.T10;
-import com.sherlock.hard.T4;
+import com.sherlock.data_structure.QuickSort;
+import com.sherlock.data_structure.RainbowSort;
+import com.sherlock.easy.*;
+import com.sherlock.hard.*;
+import com.sherlock.lintcode.*;
 import com.sherlock.normal.*;
-import com.sherlock.sort.BublleSort;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.PriorityQueue;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-//        System.out.println(new T837().new21Game(10,1,10));
-//        System.out.println(new T837().new21Game(6,1,10));
-//        System.out.println(new T837().new21Game(21,17,10));
-//        System.out.println(new T837().new21Game(9301,9224,7771));
-//        System.out.println(new S14_2().cuttingRope(10));
+
+
+        //Integer[] nums1 = {2, 2, 2, 1, 3, 1, 3, 4, 3, 2, 4, 1, 3, 4, 4, 2, 2, 1, 1, 3, 3};
+        Integer[] nums1 = {1, 7, 9, 2, 5, 3, 4, 8, 0, 6};
+        //System.out.println(new J51().reversePairs(nums1));
+//        for (int i = 0; i < nums1.length; i++) {
+//            System.out.print(nums1[i] + " ");
 //
-//        System.out.println(new S14_2().cuttingRope(120));
-//        int [] nums1 = {1,3}, nums2 = {2};
-//        System.out.println(new T4().findMedianSortedArrays(nums1,nums2));
-//        System.out.println(new T8().myAtoi("42"));
-//        System.out.println(new T8().myAtoi("4193 with words"));
-//        System.out.println(new T8().myAtoi("words and 987"));
-//        System.out.println(new T8().myAtoi("-91283472332"));
-//        System.out.println(new T8().myAtoi("3.14159"));
-//        System.out.println(new T10().isMatch("aab","c*a*b"));
-        int [] nums1 = {5, 2, 3, 1, 4};
-//        int [] nums1 = {0,0,0,0,0};
-//        int [] nums1 = {10,1,2,7,6,1,5};
-//        int [] nums1 = {1,1,2};
-//        int target = 8;
-//        int [] nums1 = {-1,0,1,2,-1,-4,-2,-3,3,0,4};
-//        List<List<Integer>> result = new T15().threeSum(nums1);
-//        for (int i = 0; i < result.size(); i++) {
-//            System.out.println(result.get(i));
 //        }
-//            System.out.println(new T17().letterCombinations("3"));
-//            System.out.println(new T28().strStr("hello","ll"));
-//        new T31().nextPermutation(nums1);
-//        System.out.println(new T33().search(nums1,0));
-//        System.out.println(new T38().countAndSay(4));
-//        System.out.println(new T40().combinationSum(nums1,target));
-//        System.out.println(new T47().permuteUnique(nums1));
-//        char a = 'a';
-//        char b = 'b';
-//        System.out.println((int) a);
-//        System.out.println((int) b);
-//        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
-//        System.out.println(new T49().groupAnagrams(strs));
-//        System.out.println(new T125().isPalindrome("0P"));
-//        System.out.println(new T71().simplifyPath("/home//foo/"));
-//        System.out.println(new T71().simplifyPath("/../"));
-//        System.out.println(new J20().isNumber("-1E-16"));
-//        System.out.println(new J36().treeToDoublyList(new J36.Node(1)));
-//        System.out.println(new J49().nthUglyNumber(1600));
-//        System.out.println(new J62().lastRemaining(5,2));
-//        System.out.println(new J67().strToInt(".1"));
-//            System.out.println(new T15().threeSum(nums1));
-//            System.out.println(new T18().fourSum(nums1,0));
-//            System.out.println(new T91().numDecodings("1201234"));
-//            System.out.println(new T131().partition("bb"));
-//        System.out.println(new T80().removeDuplicates(nums1));
-        new BublleSort().MySort(nums1);
+        //new RainbowSort().rainbowSort(nums1,4);
+        PriorityQueue<Integer> heap = new PriorityQueue<>();
         for (int i = 0; i < nums1.length; i++) {
-            System.out.println(nums1[i]);
+            heap.add(nums1[i]);
         }
-        HashMap<Integer,Integer> opResults = new HashMap(); // 缓存值
+//        for (int i = 0; i < nums1.length; i++) {
+//            System.out.println(heap.poll());
+//        }
+        nums1 = heap.toArray(new Integer[0]);
+        //new QuickSort().sort(nums1);
+        System.out.println(Arrays.toString(nums1));
+
     }
 
 
