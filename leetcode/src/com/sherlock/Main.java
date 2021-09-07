@@ -29,12 +29,12 @@ public class Main {
         for (int i = 0; i < nums1.length; i++) {
             heap.add(nums1[i]);
         }
-//        for (int i = 0; i < nums1.length; i++) {
-//            System.out.println(heap.poll());
-//        }
-        nums1 = heap.toArray(new Integer[0]);
-        //new QuickSort().sort(nums1);
-        System.out.println(Arrays.toString(nums1));
+        for (int i = 0; i < nums1.length; i++) {
+            System.out.println(heap.poll());
+        }
+//        nums1 = heap.toArray(new Integer[0]);
+//        //new QuickSort().sort(nums1);
+//        System.out.println(Arrays.toString(nums1));
 
     }
 

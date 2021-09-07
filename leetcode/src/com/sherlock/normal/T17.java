@@ -10,8 +10,9 @@ public class T17 {
             return result;
         String[][] chars = {{"a", "b", "c"}, {"d", "e", "f"}, {"g", "h", "i"}, {"j", "k", "l"}, {"m", "n", "o"}, {"p", "q", "r", "s"}, {"t", "u", "v"}, {"w", "x", "y", "z"}};
         char [] nums = digits.toCharArray();
-        for (int i = 0; i < chars[Integer.valueOf(nums[0]+"")].length; i++) {
-            result.add(chars[Integer.valueOf(nums[0]+"")-2][i]);
+
+        for (int i = 0; i < chars[Integer.valueOf(nums[0]+"")].length; i++) {//3  huozhe 4
+            result.add(chars[Integer.valueOf(nums[0]+"")-2][i]);//0 和1是没有的2开始
         }
         for (int i = 1; i < nums.length; i++) {
             result = dker(result,chars[Integer.valueOf(nums[i]+"")-2]);

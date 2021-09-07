@@ -1,10 +1,12 @@
 package com.sherlock.data_structure;
 
 public class Node {
-    int val;
+    public int val;
     public Node next;
     public Node left;
     public Node right;
+    public Node random;
+
     public Node() {
     }
 
