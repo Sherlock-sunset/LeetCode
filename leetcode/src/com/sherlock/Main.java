@@ -35,7 +35,7 @@ public class Main {
 //        nums1 = heap.toArray(new Integer[0]);
 //        //new QuickSort().sort(nums1);
 //        System.out.println(Arrays.toString(nums1));
-
+        System.out.println(new T76().minWindow("ADOBECODEBANC","ABC"));
     }
 
 

@@ -1,5 +1,7 @@
 package com.sherlock.normal;
 
+import com.sherlock.data_structure.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,18 +25,23 @@ public class T19 {
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode node = head;
-        List<ListNode> nodes = new ArrayList<>();
-        nodes.add(node);
-        while (node.next != null){
-            node = node.next;
-            nodes.add(node);
+        ListNode slow = head, fast = head;
+        for (int i = 0; i < n - 1; i++) {
+            fast = fast.next;
         }
-        int delete = nodes.size() - n;
-        if (delete==0){
-            return  nodes.size()>1?nodes.get(1):null;
+        if (fast.next == null) {   //首先要解决删除第一个指针的情况
+            return head.next;
         }
-        nodes.get(delete-1).next = delete+1>=nodes.size()? null: nodes.get(delete+1);
-        return nodes.get(0);
+        while (fast.next != null) {
+            fast = fast.next;
+            if (fast.next == null) {
+                fast = slow.next.next;
+                slow.next = fast;
+                break;
+            }
+            slow = slow.next;
+        }
+
+        return head;
     }
 }
